@@ -1,0 +1,4 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Button, CircularProgress, } from '@mui/material';
+const ConfirmDeleteDialog = ({ open, title, description, loading, onConfirm, onCancel, }) => (_jsxs(Dialog, { open: open, onClose: onCancel, maxWidth: "xs", fullWidth: true, children: [_jsx(DialogTitle, { children: title }), _jsx(DialogContent, { children: _jsx(DialogContentText, { children: description }) }), _jsxs(DialogActions, { children: [_jsx(Button, { onClick: onCancel, disabled: loading, children: "Cancelar" }), _jsx(Button, { color: "error", variant: "contained", onClick: onConfirm, disabled: loading, startIcon: loading ? _jsx(CircularProgress, { size: 16, color: "inherit" }) : null, children: loading ? 'Excluindo...' : 'Excluir' })] })] }));
+export default ConfirmDeleteDialog;
