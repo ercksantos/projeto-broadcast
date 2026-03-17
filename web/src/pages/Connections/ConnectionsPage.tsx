@@ -59,7 +59,9 @@ const ConnectionsPage = (): JSX.Element => {
       <Box className="flex items-center justify-between mb-6">
         <Typography variant="h5">Conexões</Typography>
         <Button variant="contained" startIcon={<Add />} onClick={() => setModalOpen(true)}>
-          Nova Conexão
+          <Box component="span" sx={{ display: { xs: 'none', sm: 'inline' } }}>
+            Nova Conexão
+          </Box>
         </Button>
       </Box>
 

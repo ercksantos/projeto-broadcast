@@ -77,7 +77,9 @@ const MessagesPage = (): JSX.Element => {
           disabled={!selectedConnectionId}
           onClick={() => setModalOpen(true)}
         >
-          Nova Mensagem
+          <Box component="span" sx={{ display: { xs: 'none', sm: 'inline' } }}>
+            Nova Mensagem
+          </Box>
         </Button>
       </Box>
 

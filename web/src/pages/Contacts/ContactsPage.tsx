@@ -72,7 +72,9 @@ const ContactsPage = (): JSX.Element => {
           disabled={!selectedConnectionId}
           onClick={() => setModalOpen(true)}
         >
-          Novo Contato
+          <Box component="span" sx={{ display: { xs: 'none', sm: 'inline' } }}>
+            Novo Contato
+          </Box>
         </Button>
       </Box>
 

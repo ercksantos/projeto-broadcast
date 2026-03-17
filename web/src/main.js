@@ -10,4 +10,4 @@ import { appTheme } from '@/theme';
 import { AuthProvider } from '@/contexts/AuthContext';
 import App from './App';
 import './index.css';
-ReactDOM.createRoot(document.getElementById('root')).render(_jsx(React.StrictMode, { children: _jsx(ThemeProvider, { theme: appTheme, children: _jsxs(LocalizationProvider, { dateAdapter: AdapterDayjs, adapterLocale: "pt-br", children: [_jsx(CssBaseline, {}), _jsx(SnackbarProvider, { maxSnack: 3, autoHideDuration: 3000, children: _jsx(AuthProvider, { children: _jsx(App, {}) }) })] }) }) }));
+ReactDOM.createRoot(document.getElementById('root')).render(_jsx(React.StrictMode, { children: _jsx(ThemeProvider, { theme: appTheme, children: _jsxs(LocalizationProvider, { dateAdapter: AdapterDayjs, adapterLocale: "pt-br", children: [_jsx(CssBaseline, {}), _jsx(SnackbarProvider, { maxSnack: 3, autoHideDuration: 3000, anchorOrigin: { vertical: 'bottom', horizontal: 'right' }, children: _jsx(AuthProvider, { children: _jsx(App, {}) }) })] }) }) }));
