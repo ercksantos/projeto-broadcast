@@ -1,0 +1,30 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isOwner(clientId) {
+      return request.auth != null && request.auth.uid == clientId;
+    }
+
+    match /connections/{docId} {
+      allow read, delete: if isOwner(resource.data.clientId);
+      allow create: if isOwner(request.resource.data.clientId);
+      allow update: if isOwner(resource.data.clientId)
+                    && isOwner(request.resource.data.clientId);
+    }
+
+    match /contacts/{docId} {
+      allow read, delete: if isOwner(resource.data.clientId);
+      allow create: if isOwner(request.resource.data.clientId);
+      allow update: if isOwner(resource.data.clientId)
+                    && isOwner(request.resource.data.clientId);
+    }
+
+    match /messages/{docId} {
+      allow read, delete: if isOwner(resource.data.clientId);
+      allow create: if isOwner(request.resource.data.clientId);
+      allow update: if isOwner(resource.data.clientId)
+                    && isOwner(request.resource.data.clientId);
+    }
+  }
+}
