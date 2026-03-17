@@ -1,5 +1,11 @@
-import { jsx as _jsx } from "react/jsx-runtime";
-const App = () => {
-    return _jsx("div", { children: "Broadcast App" });
-};
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import PrivateRoute from '@/components/common/PrivateRoute';
+import LoginPage from '@/pages/Auth/LoginPage';
+import RegisterPage from '@/pages/Auth/RegisterPage';
+import AppShell from '@/components/layout/AppShell';
+import ConnectionsPage from '@/pages/Connections/ConnectionsPage';
+import ContactsPage from '@/pages/Contacts/ContactsPage';
+import MessagesPage from '@/pages/Messages/MessagesPage';
+const App = () => (_jsx(BrowserRouter, { children: _jsxs(Routes, { children: [_jsx(Route, { path: "/login", element: _jsx(LoginPage, {}) }), _jsx(Route, { path: "/cadastro", element: _jsx(RegisterPage, {}) }), _jsx(Route, { element: _jsx(PrivateRoute, {}), children: _jsxs(Route, { element: _jsx(AppShell, {}), children: [_jsx(Route, { path: "/", element: _jsx(Navigate, { to: "/conexoes", replace: true }) }), _jsx(Route, { path: "/conexoes", element: _jsx(ConnectionsPage, {}) }), _jsx(Route, { path: "/contatos", element: _jsx(ContactsPage, {}) }), _jsx(Route, { path: "/mensagens", element: _jsx(MessagesPage, {}) })] }) })] }) }));
 export default App;
