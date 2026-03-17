@@ -1,0 +1,13 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { ThemeProvider, CssBaseline } from '@mui/material';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import 'dayjs/locale/pt-br';
+import { SnackbarProvider } from 'notistack';
+import { appTheme } from '@/theme';
+import { AuthProvider } from '@/contexts/AuthContext';
+import App from './App';
+import './index.css';
+ReactDOM.createRoot(document.getElementById('root')).render(_jsx(React.StrictMode, { children: _jsx(ThemeProvider, { theme: appTheme, children: _jsxs(LocalizationProvider, { dateAdapter: AdapterDayjs, adapterLocale: "pt-br", children: [_jsx(CssBaseline, {}), _jsx(SnackbarProvider, { maxSnack: 3, autoHideDuration: 3000, children: _jsx(AuthProvider, { children: _jsx(App, {}) }) })] }) }) }));
